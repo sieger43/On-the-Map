@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		992B4DB822237F0F0011D05B /* StudentLocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */; };
+		992B4DBA22237FB90011D05B /* StudentsLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */; };
+		992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DBB222380250011D05B /* ParsePostResponse.swift */; };
+		992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DBD222380BC0011D05B /* ParseResponse.swift */; };
 		99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D1A2213B66D00BC0AE9 /* ParseClient.swift */; };
 		99337D1D2213B8B400BC0AE9 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D1C2213B8B400BC0AE9 /* StudentLocation.swift */; };
 		99337D222213BDC100BC0AE9 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D212213BDC100BC0AE9 /* UdacityClient.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationRecord.swift; sourceTree = "<group>"; };
+		992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsLocationsResponse.swift; sourceTree = "<group>"; };
+		992B4DBB222380250011D05B /* ParsePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsePostResponse.swift; sourceTree = "<group>"; };
+		992B4DBD222380BC0011D05B /* ParseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseResponse.swift; sourceTree = "<group>"; };
 		99337D1A2213B66D00BC0AE9 /* ParseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		99337D1C2213B8B400BC0AE9 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		99337D212213BDC100BC0AE9 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
@@ -48,20 +56,17 @@
 			children = (
 				99337D1A2213B66D00BC0AE9 /* ParseClient.swift */,
 				99337D1C2213B8B400BC0AE9 /* StudentLocation.swift */,
+				992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */,
 			);
 			path = "Parse Client";
-			sourceTree = "<group>";
-		};
-		99337D182213B60800BC0AE9 /* Parse Requests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Parse Requests";
 			sourceTree = "<group>";
 		};
 		99337D192213B61800BC0AE9 /* Parse Responses */ = {
 			isa = PBXGroup;
 			children = (
+				992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */,
+				992B4DBB222380250011D05B /* ParsePostResponse.swift */,
+				992B4DBD222380BC0011D05B /* ParseResponse.swift */,
 			);
 			path = "Parse Responses";
 			sourceTree = "<group>";
@@ -135,7 +140,6 @@
 				99337D1F2213BD0500BC0AE9 /* Udacity Requests */,
 				99337D1E2213BD0000BC0AE9 /* Udacity Responses */,
 				99337D172213B5F400BC0AE9 /* Parse Client */,
-				99337D182213B60800BC0AE9 /* Parse Requests */,
 				99337D192213B61800BC0AE9 /* Parse Responses */,
 			);
 			path = Model;
@@ -231,8 +235,12 @@
 				99337D1D2213B8B400BC0AE9 /* StudentLocation.swift in Sources */,
 				9972A6D72210F2C5001BB7CB /* LoginViewController.swift in Sources */,
 				99337D242213BF1900BC0AE9 /* LoginRequest.swift in Sources */,
+				992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */,
 				9972A6D52210F2C5001BB7CB /* AppDelegate.swift in Sources */,
 				99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */,
+				992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */,
+				992B4DB822237F0F0011D05B /* StudentLocationRecord.swift in Sources */,
+				992B4DBA22237FB90011D05B /* StudentsLocationsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
