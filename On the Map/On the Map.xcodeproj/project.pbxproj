@@ -20,6 +20,7 @@
 		9972A6DA2210F2C5001BB7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9972A6D82210F2C5001BB7CB /* Main.storyboard */; };
 		9972A6DC2210F2C7001BB7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9972A6DB2210F2C7001BB7CB /* Assets.xcassets */; };
 		9972A6DF2210F2C7001BB7CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9972A6DD2210F2C7001BB7CB /* LaunchScreen.storyboard */; };
+		9984DC7C2224CDD9002BD72D /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984DC7B2224CDD9002BD72D /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9972A6DB2210F2C7001BB7CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9972A6DE2210F2C7001BB7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9972A6E02210F2C7001BB7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9984DC7B2224CDD9002BD72D /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		99337D1E2213BD0000BC0AE9 /* Udacity Responses */ = {
 			isa = PBXGroup;
 			children = (
+				9984DC7B2224CDD9002BD72D /* LoginResponse.swift */,
 			);
 			path = "Udacity Responses";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */,
 				992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */,
 				992B4DB822237F0F0011D05B /* StudentLocationRecord.swift in Sources */,
+				9984DC7C2224CDD9002BD72D /* LoginResponse.swift in Sources */,
 				992B4DBA22237FB90011D05B /* StudentsLocationsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
