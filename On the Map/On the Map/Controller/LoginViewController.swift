@@ -15,6 +15,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func loginTapped(_ sender: UIButton) {
+        print("loginTapped")
+    }
+    
+    @IBAction func signUpTapped(_ sender: UIButton) {
+        print("signUpTapped")
+    }
 }
 
