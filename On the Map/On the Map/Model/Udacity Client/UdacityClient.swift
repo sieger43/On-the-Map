@@ -29,22 +29,7 @@ class UdacityClient
             return URL(string: stringValue)!
         }
     }
-    
-    class func handleLoginResponse(success: Bool, error: Error?) {
-        if success {
-            print("Happy")
-            UdacityClient.logout(completion: UdacityClient.handleLogoutResponse)
-        } else {
-            let message = error?.localizedDescription ?? ""
-            print("\(message)");
-            print("Sad")
-        }
-    }
-    
-    class func handleLogoutResponse() {
-        print("Logged Out")
-    }
-    
+ 
     class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
