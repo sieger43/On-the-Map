@@ -13,14 +13,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        emailTextField.text = ""
+        passwordTextField.text = ""
+        setLoggingIn(false)
+    }
+    
     @IBAction func loginTapped(_ sender: UIButton) {
-        print("loginTapped")
+        setLoggingIn(true)
 
         UdacityClient.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: handleLoginResponse)
     }
@@ -31,9 +40,11 @@ class LoginViewController: UIViewController {
     
     func setLoggingIn(_ loggingIn: Bool) {
         if loggingIn {
-            //activityIndicator.startAnimating()
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
         } else {
-            //activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
         }
         emailTextField.isEnabled = !loggingIn
         passwordTextField.isEnabled = !loggingIn
@@ -41,9 +52,13 @@ class LoginViewController: UIViewController {
     }
     
     func handleLoginResponse(success: Bool, error: Error?) {
+        
+        setLoggingIn(false)
+        
         if success {
             print("Happy")
-            UdacityClient.logout(completion: handleLogoutResponse)
+            performSegue(withIdentifier: "completeLogin", sender: nil)
+//            UdacityClient.logout(completion: handleLogoutResponse)
         } else {
             let message = error?.localizedDescription ?? ""
             print("\(message)");
