@@ -22,6 +22,7 @@
 		9972A6DC2210F2C7001BB7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9972A6DB2210F2C7001BB7CB /* Assets.xcassets */; };
 		9972A6DF2210F2C7001BB7CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9972A6DD2210F2C7001BB7CB /* LaunchScreen.storyboard */; };
 		9984DC7C2224CDD9002BD72D /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984DC7B2224CDD9002BD72D /* LoginResponse.swift */; };
+		99DC9031223DD509007B5C86 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC9030223DD509007B5C86 /* StudentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9972A6DE2210F2C7001BB7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9972A6E02210F2C7001BB7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9984DC7B2224CDD9002BD72D /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		99DC9030223DD509007B5C86 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		9972A6E72210F351001BB7CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99DC902F223DD4B7007B5C86 /* Data */,
 				99337D202213BD0800BC0AE9 /* Udacity Client */,
 				99337D1F2213BD0500BC0AE9 /* Udacity Requests */,
 				99337D1E2213BD0000BC0AE9 /* Udacity Responses */,
@@ -164,6 +167,14 @@
 				996BFE662239E9D8002B2D58 /* MapViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		99DC902F223DD4B7007B5C86 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				99DC9030223DD509007B5C86 /* StudentModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				9972A6D72210F2C5001BB7CB /* LoginViewController.swift in Sources */,
 				99337D242213BF1900BC0AE9 /* LoginRequest.swift in Sources */,
 				992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */,
+				99DC9031223DD509007B5C86 /* StudentModel.swift in Sources */,
 				9972A6D52210F2C5001BB7CB /* AppDelegate.swift in Sources */,
 				99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */,
 				996BFE672239E9D8002B2D58 /* MapViewController.swift in Sources */,

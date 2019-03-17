@@ -148,7 +148,6 @@
         <!--Map-->
         <scene sceneID="vxn-1d-0QH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mzV-Qa-arE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="BfB-9Q-5dX" customClass="MapViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpL-G0-8Db">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -170,6 +169,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="yzn-VQ-cO7"/>
                     <navigationItem key="navigationItem" id="XI7-OD-eiI"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzV-Qa-arE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2584.8000000000002" y="-226.23688155922042"/>
         </scene>

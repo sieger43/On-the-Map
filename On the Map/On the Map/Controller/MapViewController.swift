@@ -9,12 +9,28 @@
 import Foundation
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        ParseClient.getStudentLocations(){ success, error, response in
+            if success {
+                print("Happy handleStudentsLocationsResponse")
+                
+                if let thedata = response {
+                    print("\(thedata.results)")
+                }
+                
+            } else {
+                let message = error?.localizedDescription ?? ""
+                print("\(message)");
+                print("Sad handleStudentsLocationsResponse")
+            }
+        }
     }
 
 

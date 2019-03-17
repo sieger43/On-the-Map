@@ -29,14 +29,29 @@ class ParseClient
         }
         
     }
-    
-    class func handleDataResponse(success: Bool, error: Error?) {
+  
+    class func handleStudentsLocationsResponse(success: Bool, error: Error?, response: StudentsLocationsResponse?) {
         if success {
-            print("Happy")
+            print("Happy handleStudentsLocationsResponse")
+            
+            if let thedata = response {
+                print("\(thedata.results)")
+            }
+            
         } else {
             let message = error?.localizedDescription ?? ""
             print("\(message)");
-            print("Sad")
+            print("Sad handleStudentsLocationsResponse")
+        }
+    }
+    
+    class func handleDataResponse(success: Bool, error: Error?) {
+        if success {
+            print("Happy handleDataResponse")
+        } else {
+            let message = error?.localizedDescription ?? ""
+            print("\(message)");
+            print("Sad handleDataResponse")
         }
     }
     
@@ -44,10 +59,6 @@ class ParseClient
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = try! JSONEncoder().encode(body)
-        
-        print(NSString(data: request.httpBody!, encoding:String.Encoding.utf8.rawValue)!)
-        
-        
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(restAppID, forHTTPHeaderField: "X-Parse-Application-Id")
@@ -80,7 +91,6 @@ class ParseClient
         }
         task.resume()
     }
-    
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         
@@ -120,15 +130,15 @@ class ParseClient
         return task
     }
     
-    class func getStudentLocations(completion: @escaping (Bool, Error?) -> Void) {
+    class func getStudentLocations(completion: @escaping (Bool, Error?, StudentsLocationsResponse?) -> Void) {
         
         taskForGETRequest(url: Endpoints.studentlocations.url, responseType: StudentsLocationsResponse.self) { response, error in
             if let response = response {
                 print("\(response.results)")
-                completion(response.results.count > 0, nil)
+                completion(response.results.count > 0, nil, response)
             } else {
-                print("false")
-                completion(false, error)
+                print("false getStudentLocations")
+                completion(false, error, nil)
             }
         }
     }
