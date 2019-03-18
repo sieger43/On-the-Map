@@ -168,6 +168,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="yzn-VQ-cO7"/>
                     <navigationItem key="navigationItem" id="XI7-OD-eiI"/>
+                    <connections>
+                        <outlet property="mapView" destination="1ik-WF-1Mf" id="GZy-uL-KXF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzV-Qa-arE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
