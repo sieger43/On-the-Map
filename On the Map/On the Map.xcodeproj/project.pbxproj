@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9906DF5F2240824E0043E44D /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906DF5E2240824E0043E44D /* StudentListViewController.swift */; };
 		992B4DB822237F0F0011D05B /* StudentLocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */; };
 		992B4DBA22237FB90011D05B /* StudentsLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */; };
 		992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DBB222380250011D05B /* ParsePostResponse.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9906DF5E2240824E0043E44D /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationRecord.swift; sourceTree = "<group>"; };
 		992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsLocationsResponse.swift; sourceTree = "<group>"; };
 		992B4DBB222380250011D05B /* ParsePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsePostResponse.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				9972A6D62210F2C5001BB7CB /* LoginViewController.swift */,
 				996BFE662239E9D8002B2D58 /* MapViewController.swift */,
+				9906DF5E2240824E0043E44D /* StudentListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				99337D242213BF1900BC0AE9 /* LoginRequest.swift in Sources */,
 				992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */,
 				99DC9031223DD509007B5C86 /* StudentModel.swift in Sources */,
+				9906DF5F2240824E0043E44D /* StudentListViewController.swift in Sources */,
 				9972A6D52210F2C5001BB7CB /* AppDelegate.swift in Sources */,
 				99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */,
 				996BFE672239E9D8002B2D58 /* MapViewController.swift in Sources */,
