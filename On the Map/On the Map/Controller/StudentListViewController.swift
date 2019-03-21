@@ -8,54 +8,37 @@
 
 import UIKit
 
-class StudentListViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-}
+class StudentListViewController: UITableViewController {
 
-extension StudentListViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return MovieModel.watchlist.count
-          return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentListTableViewCell")!
+    override func viewWillAppear(_ animated:Bool){
+        super.viewWillAppear(animated)
         
-//        let movie = MovieModel.watchlist[indexPath.row]
-//
-//        cell.textLabel?.text = movie.title
-//        cell.imageView?.image = UIImage(named: "PosterPlaceholder")
-//        if let posterPath = movie.posterPath {
-//            TMDBClient.downloadPosterImage(path: posterPath) { data, error in
-//                guard let data = data else {
-//                    return
-//                }
-//                let image = UIImage(data: data)
-//                cell.imageView?.image = image
-//                cell.setNeedsLayout()
-//            }
-//        }
-        
-        return cell
+        self.tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //selectedIndex = indexPath.row
-        performSegue(withIdentifier: "showDetail", sender: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
+    /**
+     * Number of Rows
+     */
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return StudentModel.locations.count
+    }
+    
+    /**
+     * Cell For Row At Index Path
+     */
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let location = StudentModel.locations[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentListTableViewCell")
+        
+        
+        
+        cell!.textLabel?.text = location.firstName! + " " + location.lastName!
+        cell!.imageView?.image = UIImage(named: "icon_pin")
+        
+        return cell!
     }
     
 }

@@ -134,7 +134,7 @@ class ParseClient
         
         taskForGETRequest(url: Endpoints.studentlocations.url, responseType: StudentsLocationsResponse.self) { response, error in
             if let response = response {
-                print("\(response.results)")
+                print("true getStudentLocations")
                 completion(response.results.count > 0, nil, response)
             } else {
                 print("false getStudentLocations")

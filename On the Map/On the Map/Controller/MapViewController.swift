@@ -25,8 +25,7 @@ class MapViewController: UIViewController {
                 print("Happy handleStudentsLocationsResponse")
                 
                 if let thedata = response {
-                    print("\(thedata.results)")
-                    StudentModel.locations = response?.results ?? [StudentLocation]()
+                    StudentModel.locations = thedata.results
                     
                     DispatchQueue.main.async {
                         self.addStudentLocationAnnotationstoMap()

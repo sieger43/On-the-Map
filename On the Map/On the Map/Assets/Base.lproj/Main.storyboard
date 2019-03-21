@@ -127,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2k5-7s-Egk" kind="relationship" relationship="rootViewController" id="ggG-W8-arw"/>
+                        <segue destination="IWF-44-URW" kind="relationship" relationship="rootViewController" id="Uo8-Oa-tBa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PH1-kz-RnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,42 +135,33 @@
             <point key="canvasLocation" x="1788" y="465"/>
         </scene>
         <!--Student List View Controller-->
-        <scene sceneID="2KW-dk-zAN">
+        <scene sceneID="U1c-kQ-RSF">
             <objects>
-                <viewController id="2k5-7s-Egk" customClass="StudentListViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cZ9-ZE-3Vy">
+                <tableViewController id="IWF-44-URW" customClass="StudentListViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FHW-T9-yNk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VvV-yg-uIb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentListTableViewCell" id="DYf-OG-TMY">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DYf-OG-TMY" id="ozp-fh-qVn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="VvV-yg-uIb" firstAttribute="leading" secondItem="8r5-db-7Jf" secondAttribute="leading" id="4aY-3D-441"/>
-                            <constraint firstItem="VvV-yg-uIb" firstAttribute="trailing" secondItem="8r5-db-7Jf" secondAttribute="trailing" id="7UH-rV-4sk"/>
-                            <constraint firstItem="VvV-yg-uIb" firstAttribute="bottom" secondItem="8r5-db-7Jf" secondAttribute="bottom" id="HVE-iT-SGN"/>
-                            <constraint firstItem="VvV-yg-uIb" firstAttribute="top" secondItem="8r5-db-7Jf" secondAttribute="top" id="Lw7-pd-ZBC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8r5-db-7Jf"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="w5S-KA-Yt4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zAb-L6-1zV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentListTableViewCell" id="lK0-r5-OK2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lK0-r5-OK2" id="M7h-fN-oyL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IWF-44-URW" id="WYn-tf-KM2"/>
+                            <outlet property="delegate" destination="IWF-44-URW" id="PfQ-3I-68p"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cFJ-LW-AbS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C11-nw-Bt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="469.1154422788606"/>
+            <point key="canvasLocation" x="2585" y="465"/>
         </scene>
         <!--Item-->
         <scene sceneID="JcH-Os-89W">
