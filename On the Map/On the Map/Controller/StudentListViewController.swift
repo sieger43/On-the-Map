@@ -36,6 +36,7 @@ class StudentListViewController: UITableViewController {
         
         
         cell!.textLabel?.text = location.firstName! + " " + location.lastName!
+        cell!.detailTextLabel?.text = location.mediaURL;
         cell!.imageView?.image = UIImage(named: "icon_pin")
         
         return cell!
