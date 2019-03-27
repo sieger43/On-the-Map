@@ -117,11 +117,11 @@
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="125.4872563718141"/>
         </scene>
-        <!--Item-->
+        <!--Item02-->
         <scene sceneID="FKQ-f6-vOH">
             <objects>
                 <navigationController id="nFo-du-cYi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="PNT-XY-NGx"/>
+                    <tabBarItem key="tabBarItem" title="Item02" id="PNT-XY-NGx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X97-XG-YC9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,17 +173,19 @@
                             <outlet property="delegate" destination="IWF-44-URW" id="PfQ-3I-68p"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Gq6-2p-lFq"/>
                     <navigationItem key="navigationItem" id="cFJ-LW-AbS"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C11-nw-Bt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2585" y="465"/>
         </scene>
-        <!--Item-->
+        <!--Item01-->
         <scene sceneID="JcH-Os-89W">
             <objects>
                 <navigationController id="vyv-hA-bBS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IEU-5Z-IhU" userLabel="Map"/>
+                    <tabBarItem key="tabBarItem" title="Item01" id="IEU-5Z-IhU" userLabel="Map"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AE3-gY-Vzr">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -196,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="1788" y="-226"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="vxn-1d-0QH">
             <objects>
                 <viewController id="BfB-9Q-5dX" customClass="MapViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,7 +219,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8cJ-aj-5Ia"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="yzn-VQ-cO7"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="yzn-VQ-cO7"/>
                     <navigationItem key="navigationItem" id="XI7-OD-eiI"/>
                     <connections>
                         <outlet property="mapView" destination="1ik-WF-1Mf" id="GZy-uL-KXF"/>
@@ -248,5 +250,9 @@
     </scenes>
     <resources>
         <image name="LaunchLogo" width="62" height="62"/>
+        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
     </resources>
 </document>
