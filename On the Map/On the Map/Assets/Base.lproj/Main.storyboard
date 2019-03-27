@@ -134,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="1788" y="465"/>
         </scene>
-        <!--Student List View Controller-->
+        <!--On the Map-->
         <scene sceneID="U1c-kQ-RSF">
             <objects>
                 <tableViewController id="IWF-44-URW" customClass="StudentListViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,7 +174,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Gq6-2p-lFq"/>
-                    <navigationItem key="navigationItem" id="cFJ-LW-AbS"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="cFJ-LW-AbS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C11-nw-Bt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="1788" y="-226"/>
         </scene>
-        <!--Map View Controller-->
+        <!--On the Map-->
         <scene sceneID="vxn-1d-0QH">
             <objects>
                 <viewController id="BfB-9Q-5dX" customClass="MapViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
@@ -220,7 +220,7 @@
                         <viewLayoutGuide key="safeArea" id="8cJ-aj-5Ia"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="yzn-VQ-cO7"/>
-                    <navigationItem key="navigationItem" id="XI7-OD-eiI"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="XI7-OD-eiI"/>
                     <connections>
                         <outlet property="mapView" destination="1ik-WF-1Mf" id="GZy-uL-KXF"/>
                     </connections>
