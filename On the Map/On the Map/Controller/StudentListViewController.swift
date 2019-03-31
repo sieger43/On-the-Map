@@ -21,7 +21,7 @@ class StudentListViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return StudentModel.locations.count
+        return StudentInformation.locations.count
     }
     
     /**
@@ -29,7 +29,7 @@ class StudentListViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let location = StudentModel.locations[indexPath.row]
+        let location = StudentInformation.locations[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentListTableViewCell")
         
