@@ -94,7 +94,19 @@ class ParseClient
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         
-        var request = URLRequest(url: url)
+        let queryItems = [URLQueryItem(name: "limit", value: "100")]
+
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        components?.queryItems? = queryItems
+        
+        var finalURL:URL = url;
+        
+        if let urlWithQuery = components?.url {
+
+            finalURL = urlWithQuery;
+        }
+        
+        var request = URLRequest(url: finalURL)
         request.addValue(restAppID, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(restApiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         

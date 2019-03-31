@@ -22,10 +22,9 @@ class MapViewController: UIViewController {
         
         ParseClient.getStudentLocations(){ success, error, response in
             if success {
-                print("Happy handleStudentsLocationsResponse")
-                
+
                 if let thedata = response {
-                    StudentInformation.locations = thedata.results
+                    StudentInformationModel.locations = thedata.results
                     
                     DispatchQueue.main.async {
                         self.addStudentLocationAnnotationstoMap()
@@ -42,7 +41,7 @@ class MapViewController: UIViewController {
 
     func addStudentLocationAnnotationstoMap(){
         
-        for loc in StudentInformation.locations {
+        for loc in StudentInformationModel.locations {
             //print("\(loc)")
             if let lat = loc.latitude, let lon = loc.longitude,
                 let firstname = loc.firstName,

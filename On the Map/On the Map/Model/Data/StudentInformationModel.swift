@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StudentInformation {
+class StudentInformationModel {
     
     static var locations = [StudentLocation]()
  
