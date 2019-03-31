@@ -60,9 +60,27 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "completeLogin", sender: nil)
 //            UdacityClient.logout(completion: handleLogoutResponse)
         } else {
-            let message = error?.localizedDescription ?? ""
-            print("\(message)");
-            print("Sad")
+            
+            var errMessage = ""
+            
+            if let _ = error as? DecodingError{
+                errMessage = "Invalid Email or Password"
+            
+            } else if let err = error as? URLError, err.code == URLError.Code.notConnectedToInternet {
+                errMessage = "The Internet connection appears to be offline."
+            
+            } else {
+                errMessage = error?.localizedDescription ?? ""
+            }
+            
+            let alert = UIAlertController(title: "", message: errMessage, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            
+            DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+            })
+            
         }
     }
     
