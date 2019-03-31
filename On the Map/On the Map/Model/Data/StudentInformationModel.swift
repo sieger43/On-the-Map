@@ -10,6 +10,6 @@ import Foundation
 
 class StudentInformationModel {
     
-    static var locations = [StudentLocation]()
+    static var locations = [StudentInformation]()
  
 }

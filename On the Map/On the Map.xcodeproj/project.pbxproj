@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9906DF5F2240824E0043E44D /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906DF5E2240824E0043E44D /* StudentListViewController.swift */; };
-		992B4DB822237F0F0011D05B /* StudentLocationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */; };
-		992B4DBA22237FB90011D05B /* StudentsLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */; };
+		992B4DB822237F0F0011D05B /* StudentInformationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB722237F0F0011D05B /* StudentInformationRecord.swift */; };
+		992B4DBA22237FB90011D05B /* StudentsInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DB922237FB90011D05B /* StudentsInformationResponse.swift */; };
 		992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DBB222380250011D05B /* ParsePostResponse.swift */; };
 		992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B4DBD222380BC0011D05B /* ParseResponse.swift */; };
 		99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D1A2213B66D00BC0AE9 /* ParseClient.swift */; };
-		99337D1D2213B8B400BC0AE9 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D1C2213B8B400BC0AE9 /* StudentLocation.swift */; };
+		99337D1D2213B8B400BC0AE9 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D1C2213B8B400BC0AE9 /* StudentInformation.swift */; };
 		99337D222213BDC100BC0AE9 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D212213BDC100BC0AE9 /* UdacityClient.swift */; };
 		99337D242213BF1900BC0AE9 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337D232213BF1900BC0AE9 /* LoginRequest.swift */; };
 		996BFE672239E9D8002B2D58 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996BFE662239E9D8002B2D58 /* MapViewController.swift */; };
@@ -28,12 +28,12 @@
 
 /* Begin PBXFileReference section */
 		9906DF5E2240824E0043E44D /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
-		992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationRecord.swift; sourceTree = "<group>"; };
-		992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsLocationsResponse.swift; sourceTree = "<group>"; };
+		992B4DB722237F0F0011D05B /* StudentInformationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationRecord.swift; sourceTree = "<group>"; };
+		992B4DB922237FB90011D05B /* StudentsInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsInformationResponse.swift; sourceTree = "<group>"; };
 		992B4DBB222380250011D05B /* ParsePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsePostResponse.swift; sourceTree = "<group>"; };
 		992B4DBD222380BC0011D05B /* ParseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseResponse.swift; sourceTree = "<group>"; };
 		99337D1A2213B66D00BC0AE9 /* ParseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
-		99337D1C2213B8B400BC0AE9 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		99337D1C2213B8B400BC0AE9 /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		99337D212213BDC100BC0AE9 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		99337D232213BF1900BC0AE9 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		996BFE662239E9D8002B2D58 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -63,8 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				99337D1A2213B66D00BC0AE9 /* ParseClient.swift */,
-				99337D1C2213B8B400BC0AE9 /* StudentLocation.swift */,
-				992B4DB722237F0F0011D05B /* StudentLocationRecord.swift */,
+				99337D1C2213B8B400BC0AE9 /* StudentInformation.swift */,
+				992B4DB722237F0F0011D05B /* StudentInformationRecord.swift */,
 			);
 			path = "Parse Client";
 			sourceTree = "<group>";
@@ -72,7 +72,7 @@
 		99337D192213B61800BC0AE9 /* Parse Responses */ = {
 			isa = PBXGroup;
 			children = (
-				992B4DB922237FB90011D05B /* StudentsLocationsResponse.swift */,
+				992B4DB922237FB90011D05B /* StudentsInformationResponse.swift */,
 				992B4DBB222380250011D05B /* ParsePostResponse.swift */,
 				992B4DBD222380BC0011D05B /* ParseResponse.swift */,
 			);
@@ -252,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99337D222213BDC100BC0AE9 /* UdacityClient.swift in Sources */,
-				99337D1D2213B8B400BC0AE9 /* StudentLocation.swift in Sources */,
+				99337D1D2213B8B400BC0AE9 /* StudentInformation.swift in Sources */,
 				9972A6D72210F2C5001BB7CB /* LoginViewController.swift in Sources */,
 				99337D242213BF1900BC0AE9 /* LoginRequest.swift in Sources */,
 				992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */,
@@ -262,9 +262,9 @@
 				99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */,
 				996BFE672239E9D8002B2D58 /* MapViewController.swift in Sources */,
 				992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */,
-				992B4DB822237F0F0011D05B /* StudentLocationRecord.swift in Sources */,
+				992B4DB822237F0F0011D05B /* StudentInformationRecord.swift in Sources */,
 				9984DC7C2224CDD9002BD72D /* LoginResponse.swift in Sources */,
-				992B4DBA22237FB90011D05B /* StudentsLocationsResponse.swift in Sources */,
+				992B4DBA22237FB90011D05B /* StudentsInformationResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

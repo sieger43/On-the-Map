@@ -6,6 +6,6 @@
 //  Copyright © 2019 John Berndt. All rights reserved.
 //
 
-struct StudentsLocationsResponse: Codable {
-    let results: [StudentLocation]
+struct StudentsInformationResponse: Codable {
+    let results: [StudentInformation]
 }

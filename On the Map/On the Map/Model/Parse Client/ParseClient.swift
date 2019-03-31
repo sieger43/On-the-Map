@@ -30,7 +30,7 @@ class ParseClient
         
     }
   
-    class func handleStudentsLocationsResponse(success: Bool, error: Error?, response: StudentsLocationsResponse?) {
+    class func handleStudentsLocationsResponse(success: Bool, error: Error?, response: StudentsInformationResponse?) {
         if success {
             print("Happy handleStudentsLocationsResponse")
             
@@ -142,9 +142,9 @@ class ParseClient
         return task
     }
     
-    class func getStudentLocations(completion: @escaping (Bool, Error?, StudentsLocationsResponse?) -> Void) {
+    class func getStudentLocations(completion: @escaping (Bool, Error?, StudentsInformationResponse?) -> Void) {
         
-        taskForGETRequest(url: Endpoints.studentlocations.url, responseType: StudentsLocationsResponse.self) { response, error in
+        taskForGETRequest(url: Endpoints.studentlocations.url, responseType: StudentsInformationResponse.self) { response, error in
             if let response = response {
                 print("true getStudentLocations")
                 completion(response.results.count > 0, nil, response)
@@ -157,7 +157,7 @@ class ParseClient
     
     class func postStudentLocation(completion: @escaping (Bool, Error?) -> Void) {
         
-        let body = StudentLocationRecord(uniqueKey: "0987654321", firstName: "Martin", lastName: "Bishop", mapString: "San Francisco, CA", mediaURL: "yahoo.com", latitude: 37.7749, longitude: 122.4194)
+        let body = StudentInformationRecord(uniqueKey: "0987654321", firstName: "Martin", lastName: "Bishop", mapString: "San Francisco, CA", mediaURL: "yahoo.com", latitude: 37.7749, longitude: 122.4194)
         
         taskForPOSTRequest(url: Endpoints.studentlocations.url, responseType: ParsePostResponse.self, body: body){ response, error in
             if let response = response {
