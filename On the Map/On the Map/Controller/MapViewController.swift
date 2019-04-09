@@ -22,7 +22,6 @@ class MapViewController: UIViewController {
         
         ParseClient.getStudentLocations(){ success, error, response in
             if success {
-
                 if let thedata = response {
                     StudentInformationModel.locations = thedata.results
                     
@@ -32,9 +31,12 @@ class MapViewController: UIViewController {
                 }
                 
             } else {
-                let message = error?.localizedDescription ?? ""
-                print("\(message)");
-                print("Sad handleStudentsLocationsResponse")
+                let errMessage = error?.localizedDescription ?? ""
+               
+                let alert = UIAlertController(title: "", message: errMessage, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+
             }
         }
     }
