@@ -32,8 +32,6 @@ class ParseClient
   
     class func handleStudentsLocationsResponse(success: Bool, error: Error?, response: StudentsInformationResponse?) {
         if success {
-            print("Happy handleStudentsLocationsResponse")
-            
             if let thedata = response {
                 print("\(thedata.results)")
             }
@@ -47,11 +45,9 @@ class ParseClient
     
     class func handleDataResponse(success: Bool, error: Error?) {
         if success {
-            print("Happy handleDataResponse")
+            // nothing
         } else {
-            let message = error?.localizedDescription ?? ""
-            print("\(message)");
-            print("Sad handleDataResponse")
+            let _ = error?.localizedDescription ?? ""
         }
     }
     
@@ -146,10 +142,8 @@ class ParseClient
         
         taskForGETRequest(url: Endpoints.studentlocations.url, responseType: StudentsInformationResponse.self) { response, error in
             if let response = response {
-                print("true getStudentLocations")
                 completion(response.results.count > 0, nil, response)
             } else {
-                print("false getStudentLocations")
                 completion(false, error, nil)
             }
         }
@@ -161,10 +155,8 @@ class ParseClient
         
         taskForPOSTRequest(url: Endpoints.studentlocations.url, responseType: ParsePostResponse.self, body: body){ response, error in
             if let response = response {
-                print("post true")
                 completion(true, nil)
             } else {
-                print("post false")
                 completion(false, error)
             }
         }

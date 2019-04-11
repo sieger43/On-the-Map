@@ -37,6 +37,9 @@ class MapViewController: UIViewController {
                 
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
 
+                DispatchQueue.main.async(execute: {
+                    self.present(alert, animated: true)
+                })
             }
         }
     }
@@ -76,8 +79,35 @@ extension MapViewController: MKMapViewDelegate {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            view.rightCalloutAccessoryView?.isHidden = true
         }
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView,
+                 didSelect view: MKAnnotationView) {
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    func mapView(_ mapView: MKMapView,
+                 didDeselect view: MKAnnotationView) {
+        for recognizer in view.gestureRecognizers ?? [] {
+            view.removeGestureRecognizer(recognizer)
+        }
+    }
+    
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+
+        if self.mapView.selectedAnnotations.count > 0 {
+            
+            let annotation = self.mapView.selectedAnnotations[0]
+            
+            if let rawstring = annotation.subtitle, let urlstring = rawstring {
+                if let url = URL(string: urlstring) {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+        }
     }
 }

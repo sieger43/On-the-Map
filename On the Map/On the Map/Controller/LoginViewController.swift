@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUpTapped(_ sender: UIButton) {
-        UIApplication.shared.open(UdacityClient.Endpoints.signup.url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(UdacityClient.Endpoints.signup.url, options: [:])
     }
     
     func setLoggingIn(_ loggingIn: Bool) {
@@ -56,7 +56,6 @@ class LoginViewController: UIViewController {
         setLoggingIn(false)
         
         if success {
-            print("Happy")
             performSegue(withIdentifier: "completeLogin", sender: nil)
 //            UdacityClient.logout(completion: handleLogoutResponse)
         } else {
