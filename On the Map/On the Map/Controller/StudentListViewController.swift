@@ -33,12 +33,19 @@ class StudentListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentListTableViewCell")
         
-        
-        
-        cell!.textLabel?.text = location.firstName! + " " + location.lastName!
-        cell!.detailTextLabel?.text = location.mediaURL;
-        cell!.imageView?.image = UIImage(named: "icon_pin")
-        
+        if let label = cell!.textLabel,
+            let detail_label = cell!.detailTextLabel,
+            let label_image = cell!.imageView {
+            
+            if let first_name = location.firstName,
+                let last_name = location.lastName {
+            
+                label.text = first_name + " " + last_name
+                detail_label.text = location.mediaURL;
+                label_image.image = UIImage(named: "icon_pin")
+            }
+        }
+
         return cell!
     }
     

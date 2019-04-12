@@ -26,6 +26,18 @@ class MapViewController: UIViewController {
                     StudentInformationModel.locations = thedata.results
                     
                     DispatchQueue.main.async {
+                        
+                        StudentInformationModel.locations.sort { (lhs: StudentInformation, rhs: StudentInformation) -> Bool in
+                            // you can have additional code here
+                            if let left_string =  lhs.lastName,
+                                let right_string = rhs.lastName {
+                                
+                                return left_string < right_string
+                            } else {
+                                return false
+                            }
+                        }
+                        
                         self.addStudentLocationAnnotationstoMap()
                     }
                 }
