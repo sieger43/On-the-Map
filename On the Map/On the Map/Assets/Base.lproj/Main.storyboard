@@ -174,7 +174,17 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Gq6-2p-lFq"/>
-                    <navigationItem key="navigationItem" title="On the Map" id="cFJ-LW-AbS"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="cFJ-LW-AbS">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="0ct-XP-3zA"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Pin" image="icon_addpin" id="yrd-OG-DEi">
+                                <connections>
+                                    <segue destination="ZgM-2m-3Tg" kind="presentation" id="Pc5-S5-dfw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Refresh" image="icon_refresh" id="w2w-QL-oxH"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C11-nw-Bt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,4 +317,7 @@
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_refresh" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zHA-aG-bCG"/>
+    </inferredMetricsTieBreakers>
 </document>
