@@ -13,8 +13,38 @@ class StudentListViewController: UITableViewController {
     override func viewWillAppear(_ animated:Bool){
         super.viewWillAppear(animated)
         
-        self.tableView.reloadData()
+        refreshTable(self)
     }
+    
+    @IBAction func refreshTable(_ sender: Any) {
+ 
+        ParseClient.getStudentLocations(){ success, error, response in
+            if success {
+                if let thedata = response {
+                    StudentInformationModel.locations = thedata.results
+                    
+                    StudentInformationModel.sort()
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.tableView.reloadData()
+                    }
+                }
+                
+            } else {
+                let errMessage = error?.localizedDescription ?? ""
+                
+                let alert = UIAlertController(title: "", message: errMessage, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                
+                DispatchQueue.main.async(execute: {
+                    self.present(alert, animated: true)
+                })
+            }
+        }
+    }
+    
     
     /**
      * Number of Rows

@@ -20,6 +20,11 @@ class MapViewController: UIViewController {
         
         mapView.delegate = self
         
+        refreshMapPins(self)
+    }
+
+    @IBAction func refreshMapPins(_ sender: Any) {
+        
         ParseClient.getStudentLocations(){ success, error, response in
             if success {
                 if let thedata = response {
@@ -29,24 +34,26 @@ class MapViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         
+                        self.mapView.removeAnnotations(self.mapView.annotations)
                         self.addStudentLocationAnnotationstoMap()
                     }
                 }
                 
             } else {
                 let errMessage = error?.localizedDescription ?? ""
-               
+                
                 let alert = UIAlertController(title: "", message: errMessage, preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-
+                
                 DispatchQueue.main.async(execute: {
                     self.present(alert, animated: true)
                 })
             }
         }
+        
     }
-
+    
     func addStudentLocationAnnotationstoMap(){
         
         for loc in StudentInformationModel.locations {
