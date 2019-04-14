@@ -45,7 +45,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awA-rI-aZg">
                                         <rect key="frame" x="0.0" y="80" width="300" height="30"/>
-                                        <color key="backgroundColor" red="0.044882064120000002" green="0.7202361062" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="VH6-lu-Hav"/>
                                         </constraints>
@@ -280,7 +280,51 @@
                     <view key="view" contentMode="scaleToFill" id="tq2-eg-qcC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2lW-J0-BZ6">
+                                <rect key="frame" x="62.5" y="108" width="250" height="217"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="1rr-pJ-Dbu">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="67"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-P5-QVb">
+                                        <rect key="frame" x="0.0" y="107" width="250" height="110"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-5G-VBN">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vCp-dP-Zba">
+                                                <rect key="frame" x="0.0" y="40" width="250" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBv-HM-N4c">
+                                                <rect key="frame" x="0.0" y="80" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="FIND LOCATION">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doFindLocation:" destination="LRc-LF-S2t" eventType="touchUpInside" id="hes-mF-rNp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="05g-ln-SzQ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2lW-J0-BZ6" firstAttribute="centerX" secondItem="tq2-eg-qcC" secondAttribute="centerX" id="tL5-BA-VBm"/>
+                            <constraint firstItem="2lW-J0-BZ6" firstAttribute="top" secondItem="sg5-Ha-QaD" secondAttribute="top" constant="44" id="zDd-ja-6aa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sg5-Ha-QaD"/>
                     </view>
                     <toolbarItems/>
@@ -292,10 +336,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="locationTextField" destination="xUV-5G-VBN" id="s9s-UR-RMU"/>
+                        <outlet property="websiteTextField" destination="vCp-dP-Zba" id="vg9-uY-h6p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfg-Yo-OIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4530" y="152"/>
+            <point key="canvasLocation" x="4528.8000000000002" y="151.57421289355324"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SMl-Qg-XHY">
@@ -324,6 +372,7 @@
         <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_refresh" width="24" height="24"/>
+        <image name="icon_world" width="52" height="67"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Pc5-S5-dfw"/>

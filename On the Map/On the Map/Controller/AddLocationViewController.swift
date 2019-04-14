@@ -10,6 +10,9 @@ import UIKit
 
 class AddLocationViewController: UIViewController {
 
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var websiteTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +22,9 @@ class AddLocationViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
+    @IBAction func doFindLocation(_ sender: Any) {
+    }
+    
     @IBAction func doCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
