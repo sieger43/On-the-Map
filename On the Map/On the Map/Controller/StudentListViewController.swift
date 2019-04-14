@@ -48,5 +48,33 @@ class StudentListViewController: UITableViewController {
 
         return cell!
     }
+
+    func showAlert() {
+        let alert = UIAlertController(title: "", message: "Invalid Link", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        
+        DispatchQueue.main.async(execute: {
+            self.present(alert, animated: true)
+        })
+    }
     
+    /**
+     * didSelectRowAtIndexPath
+     */
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        let cell = tableView.cellForRow(at: indexPath as IndexPath)
+
+        if let studentInfoCell = cell, let urlStringLabel = studentInfoCell.detailTextLabel,
+            let urlstring = urlStringLabel.text, let url = URL(string: urlstring) {
+                    UIApplication.shared.open(url, options: [:]) { success in
+                        if !success {
+                            self.showAlert()
+                        }
+                    }
+        } else {
+            showAlert()
+        }
+    }
 }

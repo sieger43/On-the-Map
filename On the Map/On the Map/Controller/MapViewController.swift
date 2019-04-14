@@ -25,18 +25,9 @@ class MapViewController: UIViewController {
                 if let thedata = response {
                     StudentInformationModel.locations = thedata.results
                     
+                    StudentInformationModel.sort()
+                    
                     DispatchQueue.main.async {
-                        
-                        StudentInformationModel.locations.sort { (lhs: StudentInformation, rhs: StudentInformation) -> Bool in
-                            // you can have additional code here
-                            if let left_string =  lhs.lastName,
-                                let right_string = rhs.lastName {
-                                
-                                return left_string < right_string
-                            } else {
-                                return false
-                            }
-                        }
                         
                         self.addStudentLocationAnnotationstoMap()
                     }
@@ -115,10 +106,9 @@ extension MapViewController: MKMapViewDelegate {
             
             let annotation = self.mapView.selectedAnnotations[0]
             
-            if let rawstring = annotation.subtitle, let urlstring = rawstring {
-                if let url = URL(string: urlstring) {
+            if let rawstring = annotation.subtitle, let urlstring = rawstring,
+                let url = URL(string: urlstring) {
                     UIApplication.shared.open(url, options: [:])
-                }
             }
         }
     }
