@@ -24,6 +24,7 @@
 		9972A6DF2210F2C7001BB7CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9972A6DD2210F2C7001BB7CB /* LaunchScreen.storyboard */; };
 		9984DC7C2224CDD9002BD72D /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984DC7B2224CDD9002BD72D /* LoginResponse.swift */; };
 		99A3DFFC2263C01B0026CA72 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A3DFFB2263C01B0026CA72 /* AddLocationViewController.swift */; };
+		99A3E000226404AB0026CA72 /* AddLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A3DFFF226404AB0026CA72 /* AddLocationMapViewController.swift */; };
 		99DC9031223DD509007B5C86 /* StudentInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC9030223DD509007B5C86 /* StudentInformationModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		9972A6E02210F2C7001BB7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9984DC7B2224CDD9002BD72D /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		99A3DFFB2263C01B0026CA72 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		99A3DFFF226404AB0026CA72 /* AddLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationMapViewController.swift; sourceTree = "<group>"; };
 		99DC9030223DD509007B5C86 /* StudentInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				996BFE662239E9D8002B2D58 /* MapViewController.swift */,
 				9906DF5E2240824E0043E44D /* StudentListViewController.swift */,
 				99A3DFFB2263C01B0026CA72 /* AddLocationViewController.swift */,
+				99A3DFFF226404AB0026CA72 /* AddLocationMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				99337D1B2213B66D00BC0AE9 /* ParseClient.swift in Sources */,
 				996BFE672239E9D8002B2D58 /* MapViewController.swift in Sources */,
 				992B4DBC222380250011D05B /* ParsePostResponse.swift in Sources */,
+				99A3E000226404AB0026CA72 /* AddLocationMapViewController.swift in Sources */,
 				992B4DB822237F0F0011D05B /* StudentInformationRecord.swift in Sources */,
 				9984DC7C2224CDD9002BD72D /* LoginResponse.swift in Sources */,
 				992B4DBA22237FB90011D05B /* StudentsInformationResponse.swift in Sources */,

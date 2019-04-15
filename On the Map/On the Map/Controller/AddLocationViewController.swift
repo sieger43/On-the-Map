@@ -23,6 +23,8 @@ class AddLocationViewController: UIViewController {
     }
 
     @IBAction func doFindLocation(_ sender: Any) {
+        let mapController = self.storyboard!.instantiateViewController(withIdentifier: "AddLocationMapViewController") as! AddLocationMapViewController
+        self.navigationController!.pushViewController(mapController, animated: true)
     }
     
     @IBAction func doCancel(_ sender: Any) {
