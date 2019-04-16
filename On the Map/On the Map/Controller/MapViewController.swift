@@ -6,8 +6,6 @@
 //  Copyright © 2019 John Berndt. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 import MapKit
 
@@ -23,6 +21,16 @@ class MapViewController: UIViewController {
         refreshMapPins(self)
     }
 
+    @IBAction func doLogout(_ sender: Any) {
+        UdacityClient.logout(completion: handleLogoutResponse)
+    }
+
+    func handleLogoutResponse() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
     @IBAction func refreshMapPins(_ sender: Any) {
         
         ParseClient.getStudentLocations(){ success, error, response in
@@ -57,7 +65,6 @@ class MapViewController: UIViewController {
     func addStudentLocationAnnotationstoMap(){
         
         for loc in StudentInformationModel.locations {
-            //print("\(loc)")
             if let lat = loc.latitude, let lon = loc.longitude,
                 let firstname = loc.firstName,
                 let lastname = loc.lastName,

@@ -29,27 +29,6 @@ class ParseClient
         }
         
     }
-  
-    class func handleStudentsLocationsResponse(success: Bool, error: Error?, response: StudentsInformationResponse?) {
-        if success {
-            if let thedata = response {
-                print("\(thedata.results)")
-            }
-            
-        } else {
-            let message = error?.localizedDescription ?? ""
-            print("\(message)");
-            print("Sad handleStudentsLocationsResponse")
-        }
-    }
-    
-    class func handleDataResponse(success: Bool, error: Error?) {
-        if success {
-            // nothing
-        } else {
-            let _ = error?.localizedDescription ?? ""
-        }
-    }
     
     class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
         var request = URLRequest(url: url)

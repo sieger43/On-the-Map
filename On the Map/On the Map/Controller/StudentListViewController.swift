@@ -16,6 +16,16 @@ class StudentListViewController: UITableViewController {
         refreshTable(self)
     }
     
+    @IBAction func doLogout(_ sender: Any) {
+        UdacityClient.logout(completion: handleLogoutResponse)
+    }
+    
+    func handleLogoutResponse() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+
     @IBAction func refreshTable(_ sender: Any) {
  
         ParseClient.getStudentLocations(){ success, error, response in
@@ -26,7 +36,6 @@ class StudentListViewController: UITableViewController {
                     StudentInformationModel.sort()
                     
                     DispatchQueue.main.async {
-                        
                         self.tableView.reloadData()
                     }
                 }

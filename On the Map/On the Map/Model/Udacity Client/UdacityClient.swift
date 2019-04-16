@@ -49,9 +49,7 @@ class UdacityClient
                 
                 
                 let responseObject = try decoder.decode(ResponseType.self, from: newData)
-                
-                print("\(responseObject)");
-                
+
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
                 }
@@ -102,10 +100,7 @@ class UdacityClient
             if error != nil { // Handle error…
                 return
             }
-            let range = 5..<data!.count
-            let newData = data?.subdata(in: range) /* subset response data! */
-            print(String(data: newData!, encoding: .utf8)!)
-            
+
             completion()
         }
         task.resume()

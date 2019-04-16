@@ -175,7 +175,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Gq6-2p-lFq"/>
                     <navigationItem key="navigationItem" title="On the Map" id="cFJ-LW-AbS">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="0ct-XP-3zA"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="0ct-XP-3zA">
+                            <connections>
+                                <action selector="doLogout:" destination="IWF-44-URW" id="bmN-lT-mr7"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Pin" image="icon_addpin" id="yrd-OG-DEi">
                                 <connections>
@@ -235,7 +239,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="yzn-VQ-cO7"/>
                     <navigationItem key="navigationItem" title="On the Map" id="XI7-OD-eiI">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="h3a-7f-221"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="h3a-7f-221">
+                            <connections>
+                                <action selector="doLogout:" destination="BfB-9Q-5dX" id="XvG-Om-X6a"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Pin" image="icon_addpin" id="jZb-SX-h9q">
                                 <connections>
@@ -378,6 +386,9 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="y1r-E2-gUO" id="N5e-gN-Rum"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z23-Xi-gCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -413,6 +424,6 @@
         <image name="icon_world" width="52" height="67"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zHA-aG-bCG"/>
+        <segue reference="Pc5-S5-dfw"/>
     </inferredMetricsTieBreakers>
 </document>

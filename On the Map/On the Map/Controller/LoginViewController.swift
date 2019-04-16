@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
         
         if success {
             performSegue(withIdentifier: "completeLogin", sender: nil)
-//            UdacityClient.logout(completion: handleLogoutResponse)
+
         } else {
             
             var errMessage = ""
@@ -82,9 +82,6 @@ class LoginViewController: UIViewController {
             
         }
     }
-    
-    func handleLogoutResponse() {
-        print("Logged Out")
-    }
+
 }
 
