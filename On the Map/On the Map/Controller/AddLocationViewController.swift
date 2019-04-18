@@ -27,6 +27,19 @@ class AddLocationViewController: UIViewController {
 
     @IBAction func doFindLocation(_ sender: Any) {
         
+        if locationTextField.text == "" || websiteTextField.text == "" {
+        
+            let alert = UIAlertController(title: "Location Not Found", message: "Must Enter a Location", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            
+            DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+            })
+            
+            return
+        }
+        
         // this function partly adapted from https://cocoacasts.com/forward-geocoding-with-clgeocoder
         
         let rawLocation = locationTextField.text;
