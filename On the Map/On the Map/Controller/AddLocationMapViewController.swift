@@ -14,6 +14,9 @@ class AddLocationMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var location: CLLocation?
+    var locationText: String?
+    var linkText: String?
+    var lastObjectID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,73 @@ class AddLocationMapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         title = "Add Location"
+    }
+    
+    func handleUpdateResponse(success: Bool, error: Error?)
+    {
+        if success {
+            
+            DispatchQueue.main.async(execute: {
+                self.navigationController?.dismiss(animated: true, completion: nil)
+            })
+            
+        } else {
+            
+            let message = error?.localizedDescription ?? ""
+            
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            
+            DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+            })
+        }
+    }
+    
+    func handleDataResponse(success: Bool, error: Error?, objectID: String) {
+        if success {
+            
+            if StudentInformationModel.lastObjectID != "" {
+                StudentInformationModel.lastObjectID = objectID
+            }
+            
+            DispatchQueue.main.async(execute: {
+                self.navigationController?.dismiss(animated: true, completion: nil)
+            })
+
+        } else {
+            
+            let message = error?.localizedDescription ?? ""
+            
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            
+            DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+            })
+        }
+    }
+    
+    @IBAction func doFinish(_ sender: Any) {
+    
+        if let loc = location, let locText = locationText, let link = linkText {
+        
+            if let objectID = StudentInformationModel.lastObjectID {
+                ParseClient.putStudentLocation(objectId: objectID,
+                                                uniqueKey: "0987654321", firstName: "Martin", lastName: "Bishop",
+                                                mapString: locText, mediaURL: link,
+                                                latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude,
+                                                completion: handleUpdateResponse)
+            } else {
+                ParseClient.postStudentLocation(uniqueKey: "0987654321", firstName: "Martin", lastName: "Bishop",
+                                                mapString: locText, mediaURL: link,
+                                                latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude,
+                                                completion: handleDataResponse)
+            }
+        }
+
     }
     
     func addSearchLocationAnnotationstoMap(){

@@ -36,15 +36,14 @@ class MapViewController: UIViewController {
         ParseClient.getStudentLocations(){ success, error, response in
             if success {
                 if let thedata = response {
+
+                    self.mapView.removeAnnotations(self.mapView.annotations)
+
                     StudentInformationModel.locations = thedata.results
                     
                     StudentInformationModel.sort()
                     
-                    DispatchQueue.main.async {
-                        
-                        self.mapView.removeAnnotations(self.mapView.annotations)
-                        self.addStudentLocationAnnotationstoMap()
-                    }
+                    self.addStudentLocationAnnotationstoMap()
                 }
                 
             } else {

@@ -370,6 +370,9 @@
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="doFinish:" destination="9ew-f4-7nx" eventType="touchUpInside" id="hg3-F3-j2f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

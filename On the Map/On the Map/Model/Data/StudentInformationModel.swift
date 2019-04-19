@@ -11,7 +11,9 @@ import Foundation
 class StudentInformationModel {
     
     static var locations = [StudentInformation]()
- 
+
+    static var lastObjectID : String?
+    
     class func sort() {
         
         StudentInformationModel.locations.sort { (lhs: StudentInformation, rhs: StudentInformation) -> Bool in

@@ -66,6 +66,49 @@ class ParseClient
         }
         task.resume()
     }
+
+    class func taskForPutRequest<RequestType: Encodable, ResponseType: Decodable>(urlBase: String, uniqueKey: String, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
+        
+        let completeUrlString : String = urlBase + "/" + uniqueKey
+        
+        if let unwrappedUrl = URL(string: completeUrlString) {
+
+            var request = URLRequest(url: unwrappedUrl)
+            request.httpMethod = "PUT"
+            request.httpBody = try! JSONEncoder().encode(body)
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue(restAppID, forHTTPHeaderField: "X-Parse-Application-Id")
+            request.addValue(restApiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data else {
+                    DispatchQueue.main.async {
+                        completion(nil, error)
+                    }
+                    return
+                }
+                let decoder = JSONDecoder()
+                do {
+                    let responseObject = try decoder.decode(ResponseType.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(responseObject, nil)
+                    }
+                } catch {
+                    do {
+                        let errorResponse = try decoder.decode(ParsePostResponse.self, from: data) as Error
+                        DispatchQueue.main.async {
+                            completion(nil, errorResponse)
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            completion(nil, error)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         
@@ -128,12 +171,31 @@ class ParseClient
         }
     }
     
-    class func postStudentLocation(completion: @escaping (Bool, Error?) -> Void) {
-        
-        let body = StudentInformationRecord(uniqueKey: "0987654321", firstName: "Martin", lastName: "Bishop", mapString: "San Francisco, CA", mediaURL: "yahoo.com", latitude: 37.7749, longitude: 122.4194)
+    class func postStudentLocation(uniqueKey: String, firstName: String, lastName: String,
+                                   mapString: String, mediaURL: String,
+                                   latitude: Double, longitude: Double,
+                                   completion: @escaping (Bool, Error?, String) -> Void) {
+
+        let body = StudentInformationRecord(objectId: "", uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
         
         taskForPOSTRequest(url: Endpoints.studentlocations.url, responseType: ParsePostResponse.self, body: body){ response, error in
-            if let response = response {
+            if let resp = response {
+                completion(true, nil, resp.objectId)
+            } else {
+                completion(false, error, "")
+            }
+        }
+    }
+    
+    class func putStudentLocation(objectId: String, uniqueKey: String, firstName: String, lastName: String,
+                                   mapString: String, mediaURL: String,
+                                   latitude: Double, longitude: Double,
+                                   completion: @escaping (Bool, Error?) -> Void) {
+        
+        let body = StudentInformationRecord(objectId: objectId, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        
+        taskForPutRequest(urlBase: Endpoints.studentlocations.stringValue, uniqueKey: objectId, responseType: ParsePostResponse.self, body: body){ response, error in
+            if let _ = response {
                 completion(true, nil)
             } else {
                 completion(false, error)

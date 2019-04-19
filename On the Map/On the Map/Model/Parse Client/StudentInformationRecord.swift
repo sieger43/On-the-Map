@@ -8,6 +8,7 @@
 
 struct StudentInformationRecord: Codable {
     
+    let objectId : String?
     let uniqueKey : String?
     let firstName : String?
     let lastName : String?
@@ -18,6 +19,7 @@ struct StudentInformationRecord: Codable {
     
     enum CodingKeys: String, CodingKey {
         
+        case objectId
         case uniqueKey
         case firstName
         case lastName

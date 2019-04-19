@@ -27,26 +27,43 @@ class AddLocationViewController: UIViewController {
 
     @IBAction func doFindLocation(_ sender: Any) {
         
-        if locationTextField.text == "" || websiteTextField.text == "" {
+        var title: String = ""
+        var message: String = ""
         
-            let alert = UIAlertController(title: "Location Not Found", message: "Must Enter a Location", preferredStyle: .alert)
+        if locationTextField.text == "" || websiteTextField.text == "" {
+            title = "Location Not Found"
+            message = "Must Enter a Location"
+        } else if let linkText = websiteTextField.text {
+            if !linkText.uppercased().starts(with: "HTTPS://") {
+                title = "Location Not Found"
+                message = "Invalid Link. Include HTTP(S)://"
+            }
+        }
+        
+        if title != "" && message != "" {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             
             DispatchQueue.main.async(execute: {
                 self.present(alert, animated: true)
             })
-            
-            return
         }
-        
+
         // this function partly adapted from https://cocoacasts.com/forward-geocoding-with-clgeocoder
         
-        let rawLocation = locationTextField.text;
-        var address: String = "";
+        let rawLocationText = locationTextField.text;
+        let linkText = websiteTextField.text;
         
-        if let unwrappedString = rawLocation {
-            address = unwrappedString;
+        var address: String = ""
+        var link: String = ""
+        var locationText: String = ""
+
+        if let unwrappedString = rawLocationText, let unwrappedLink = linkText,
+            let unwrappedLocation = rawLocationText {
+            address = unwrappedString
+            link = unwrappedLink
+            locationText = unwrappedLocation
         }
         
         geocoder.geocodeAddressString(address) { (placemarks, error) in
@@ -75,6 +92,8 @@ class AddLocationViewController: UIViewController {
                     let mapController = self.storyboard!.instantiateViewController(withIdentifier: "AddLocationMapViewController") as! AddLocationMapViewController
                     
                     mapController.location = location
+                    mapController.locationText = locationText
+                    mapController.linkText = link
                     
                     self.navigationController!.pushViewController(mapController, animated: true)
                 }

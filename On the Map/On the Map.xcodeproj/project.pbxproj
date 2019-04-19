@@ -26,6 +26,7 @@
 		99A3DFFC2263C01B0026CA72 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A3DFFB2263C01B0026CA72 /* AddLocationViewController.swift */; };
 		99A3E000226404AB0026CA72 /* AddLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A3DFFF226404AB0026CA72 /* AddLocationMapViewController.swift */; };
 		99DC9031223DD509007B5C86 /* StudentInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC9030223DD509007B5C86 /* StudentInformationModel.swift */; };
+		99FDE1E3226964420032920B /* ParsePutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FDE1E2226964420032920B /* ParsePutResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		99A3DFFB2263C01B0026CA72 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		99A3DFFF226404AB0026CA72 /* AddLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationMapViewController.swift; sourceTree = "<group>"; };
 		99DC9030223DD509007B5C86 /* StudentInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationModel.swift; sourceTree = "<group>"; };
+		99FDE1E2226964420032920B /* ParsePutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsePutResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				992B4DB922237FB90011D05B /* StudentsInformationResponse.swift */,
 				992B4DBB222380250011D05B /* ParsePostResponse.swift */,
 				992B4DBD222380BC0011D05B /* ParseResponse.swift */,
+				99FDE1E2226964420032920B /* ParsePutResponse.swift */,
 			);
 			path = "Parse Responses";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				99337D242213BF1900BC0AE9 /* LoginRequest.swift in Sources */,
 				992B4DBE222380BC0011D05B /* ParseResponse.swift in Sources */,
 				99DC9031223DD509007B5C86 /* StudentInformationModel.swift in Sources */,
+				99FDE1E3226964420032920B /* ParsePutResponse.swift in Sources */,
 				9906DF5F2240824E0043E44D /* StudentListViewController.swift in Sources */,
 				99A3DFFC2263C01B0026CA72 /* AddLocationViewController.swift in Sources */,
 				9972A6D52210F2C5001BB7CB /* AppDelegate.swift in Sources */,
