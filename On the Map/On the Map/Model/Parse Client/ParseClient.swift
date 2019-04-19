@@ -194,7 +194,7 @@ class ParseClient
         
         let body = StudentInformationRecord(objectId: objectId, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
         
-        taskForPutRequest(urlBase: Endpoints.studentlocations.stringValue, uniqueKey: objectId, responseType: ParsePostResponse.self, body: body){ response, error in
+        taskForPutRequest(urlBase: Endpoints.studentlocations.stringValue, uniqueKey: objectId, responseType: ParsePutResponse.self, body: body){ response, error in
             if let _ = response {
                 completion(true, nil)
             } else {
