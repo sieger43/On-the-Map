@@ -17,10 +17,14 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         mapView.delegate = self
+    }
+
+    override func viewWillAppear(_ animated:Bool){
+        super.viewWillAppear(animated)
         
         refreshMapPins(self)
     }
-
+    
     @IBAction func doLogout(_ sender: Any) {
         UdacityClient.logout(completion: handleLogoutResponse)
     }
@@ -37,13 +41,15 @@ class MapViewController: UIViewController {
             if success {
                 if let thedata = response {
 
-                    self.mapView.removeAnnotations(self.mapView.annotations)
+                    DispatchQueue.main.async(execute: {
+                        self.mapView.removeAnnotations(self.mapView.annotations)
 
-                    StudentInformationModel.locations = thedata.results
+                        StudentInformationModel.locations = thedata.results
                     
-                    StudentInformationModel.sort()
+                        StudentInformationModel.sort()
                     
-                    self.addStudentLocationAnnotationstoMap()
+                        self.addStudentLocationAnnotationstoMap()
+                    })
                 }
                 
             } else {

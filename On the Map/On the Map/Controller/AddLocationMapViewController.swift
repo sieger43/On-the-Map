@@ -12,6 +12,8 @@ import MapKit
 class AddLocationMapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var location: CLLocation?
     var locationText: String?
@@ -28,6 +30,7 @@ class AddLocationMapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         title = "Add Location"
+        self.setBusy(false)
     }
     
     func handleUpdateResponse(success: Bool, error: Error?)
@@ -53,6 +56,7 @@ class AddLocationMapViewController: UIViewController {
     }
     
     func handleDataResponse(success: Bool, error: Error?, objectID: String) {
+        
         if success {
             
             if StudentInformationModel.lastObjectID != "" {
@@ -60,6 +64,8 @@ class AddLocationMapViewController: UIViewController {
             }
             
             DispatchQueue.main.async(execute: {
+                self.setBusy(false)
+                
                 self.navigationController?.dismiss(animated: true, completion: nil)
             })
 
@@ -72,15 +78,34 @@ class AddLocationMapViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             
             DispatchQueue.main.async(execute: {
+                self.setBusy(false)
+                
                 self.present(alert, animated: true)
             })
         }
     }
     
+    func setBusy(_ busy: Bool) {
+        if busy {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        }
+
+        self.mapView.isZoomEnabled = !busy;
+        self.mapView.isScrollEnabled = !busy;
+        self.mapView.isUserInteractionEnabled = !busy;
+        self.finishButton.isEnabled = !busy
+    }
+    
     @IBAction func doFinish(_ sender: Any) {
     
         if let loc = location, let locText = locationText, let link = linkText {
-        
+    
+            setBusy(true)
+            
             if let objectID = StudentInformationModel.lastObjectID {
                 ParseClient.putStudentLocation(objectId: objectID,
                                                 uniqueKey: "0987654321", firstName: "Martin", lastName: "Bishop",

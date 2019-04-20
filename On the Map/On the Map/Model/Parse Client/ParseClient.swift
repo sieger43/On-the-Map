@@ -110,7 +110,7 @@ class ParseClient
         }
     }
     
-    class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
+    class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         
         let queryItems = [URLQueryItem(name: "limit", value: "100")]
 
@@ -156,8 +156,6 @@ class ParseClient
             }
         }
         task.resume()
-        
-        return task
     }
     
     class func getStudentLocations(completion: @escaping (Bool, Error?, StudentsInformationResponse?) -> Void) {
@@ -179,8 +177,8 @@ class ParseClient
         let body = StudentInformationRecord(objectId: "", uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
         
         taskForPOSTRequest(url: Endpoints.studentlocations.url, responseType: ParsePostResponse.self, body: body){ response, error in
-            if let resp = response {
-                completion(true, nil, resp.objectId)
+            if let response = response {
+                completion(true, nil, response.objectId)
             } else {
                 completion(false, error, "")
             }

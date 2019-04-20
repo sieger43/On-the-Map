@@ -374,10 +374,15 @@
                                     <action selector="doFinish:" destination="9ew-f4-7nx" eventType="touchUpInside" id="hg3-F3-j2f"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DpJ-kF-xJa">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DpJ-kF-xJa" firstAttribute="centerY" secondItem="aXa-re-dyb" secondAttribute="centerY" id="1aZ-Ag-S7N"/>
                             <constraint firstItem="y1r-E2-gUO" firstAttribute="leading" secondItem="Zvg-ay-sea" secondAttribute="leading" id="3U1-8Y-qTE"/>
+                            <constraint firstItem="DpJ-kF-xJa" firstAttribute="centerX" secondItem="aXa-re-dyb" secondAttribute="centerX" id="C88-1P-1kD"/>
                             <constraint firstItem="y1r-E2-gUO" firstAttribute="top" secondItem="Zvg-ay-sea" secondAttribute="top" id="I0e-ng-PNg"/>
                             <constraint firstItem="y1r-E2-gUO" firstAttribute="bottom" secondItem="Zvg-ay-sea" secondAttribute="bottom" id="RsM-R6-z7v"/>
                             <constraint firstItem="TTz-bg-NxD" firstAttribute="centerX" secondItem="y1r-E2-gUO" secondAttribute="centerX" id="SPC-go-JUl"/>
@@ -390,6 +395,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="DpJ-kF-xJa" id="xuN-oX-GH4"/>
+                        <outlet property="finishButton" destination="TTz-bg-NxD" id="j12-8o-BcJ"/>
                         <outlet property="mapView" destination="y1r-E2-gUO" id="N5e-gN-Rum"/>
                     </connections>
                 </viewController>

@@ -67,11 +67,21 @@ class AddLocationViewController: UIViewController {
         }
         
         geocoder.geocodeAddressString(address) { (placemarks, error) in
-            if let error = error {
-                print("Unable to Forward Geocode Address (\(error))")
+            if let _ = error {
+
+                let title = "Location Not Found"
+                let message = "Could Not Geocode the String"
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "DISMISS", style: .default, handler: nil))
+                
+                DispatchQueue.main.async(execute: {
+                    self.present(alert, animated: true)
+                })
                 
             } else {
-                
+
                 var rawLocation: CLLocation?
                 var location: CLLocation = CLLocation(latitude: 0, longitude: 0)
                 var foundLocation: Bool = false
@@ -83,10 +93,8 @@ class AddLocationViewController: UIViewController {
                 if let rawLocation = rawLocation {
                     location = rawLocation
                     foundLocation = true
-                } else {
-                    // locationLabel.text = "No Matching Location Found"
                 }
-                
+
                 if foundLocation {
                     
                     let mapController = self.storyboard!.instantiateViewController(withIdentifier: "AddLocationMapViewController") as! AddLocationMapViewController
