@@ -45,9 +45,7 @@ class MapViewController: UIViewController {
                         self.mapView.removeAnnotations(self.mapView.annotations)
 
                         StudentInformationModel.locations = thedata.results
-                    
-                        StudentInformationModel.sort()
-                    
+
                         self.addStudentLocationAnnotationstoMap()
                     })
                 }
@@ -100,12 +98,23 @@ extension MapViewController: MKMapViewDelegate {
         } else {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView?.isHidden = true
         }
         return view
     }
-    
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            let annotation = self.mapView.selectedAnnotations[0]
+            
+            if let rawstring = annotation.subtitle, let urlstring = rawstring,
+                let url = URL(string: urlstring) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
+    }
+
     func mapView(_ mapView: MKMapView,
                  didSelect view: MKAnnotationView) {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))

@@ -13,23 +13,4 @@ class StudentInformationModel {
     static var locations = [StudentInformation]()
 
     static var lastObjectID : String?
-    
-    class func sort() {
-        
-        StudentInformationModel.locations.sort { (lhs: StudentInformation, rhs: StudentInformation) -> Bool in
-
-            let dateFormatterGet = DateFormatter()
-            dateFormatterGet.dateFormat = "MM dd, yyyy, HH:mm"
-            
-            let leftDate = dateFormatterGet.date(from: lhs.updatedAt)
-            let rightDate = dateFormatterGet.date(from: rhs.updatedAt)
-            
-            if let leftD = leftDate, let rightD = rightDate {
-                return leftD < rightD
-            } else {
-                return false
-            }
-        }
-        
-    }
 }

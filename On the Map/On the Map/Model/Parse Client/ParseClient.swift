@@ -112,7 +112,8 @@ class ParseClient
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         
-        let queryItems = [URLQueryItem(name: "limit", value: "100")]
+        let queryItems = [URLQueryItem(name: "limit", value: "100"),
+                          URLQueryItem(name: "order", value: "-updatedAt")]
 
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         components?.queryItems? = queryItems

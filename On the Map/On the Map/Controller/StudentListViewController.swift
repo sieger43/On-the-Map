@@ -32,9 +32,7 @@ class StudentListViewController: UITableViewController {
             if success {
                 if let thedata = response {
                     StudentInformationModel.locations = thedata.results
-                    
-                    StudentInformationModel.sort()
-                    
+   
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
